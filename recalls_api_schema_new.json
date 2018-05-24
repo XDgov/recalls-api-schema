@@ -77,9 +77,6 @@
         "format": "date-time"
     },
 
-    # TODO: Make a "Products" array of "Product" objects
-    # How might we accommodate both lettuce and automobiles (with year, make, model, and VIN) here?
-
     "Product": {
         "description": "Recalled product",
         "type": "object",
@@ -117,8 +114,6 @@
         }
     },
 
-    # TODO: Make an "Inconjunctions" array of "Inconjunction" objects
-
     "Inconjunction": {
         "description": "Inconjunction",
         "type": "object",
@@ -129,8 +124,6 @@
             }
         }
     },
-
-    # TODO: Make an "Images" array of "Image" objects
 
     "Image": {
         "description": "image of recalled product",
@@ -143,9 +136,6 @@
         }
     },
 
-    # TODO: Make an "Injuries" array of "Injury" objects
-    # What exactly is "Injury" for? I took a guess below, although my guess seems more like "Hazard" below. Example of injury response from CPSC: <Name>None reported.</Name>
-
     "Injury": {
         "description": "Types of injuries caused by product",
         "type": "object",
@@ -156,8 +146,6 @@
             }
         }
     },
-
-    # TODO: Make an "Manufacturers" array of "Manufacturer" objects
 
     "Manufacturer": {
         "description": "Recalled product manufacturer",
@@ -174,8 +162,6 @@
         }
     },
 
-    # TODO: Make an "ManufacturerCountries" array of "ManufacturerCountry" objects
-
     "ManufacturerCountry": {
         "description": "Country in which recalled product is manufactured",
         "type": "object",
@@ -187,8 +173,6 @@
         }
     },
 
-    # TODO: Make an "ProductUPCs" array of "ProductUPC" objects
-
     "ProductUPC": {
         "description": "Recalled product UPC",
         "type": "object",
@@ -199,8 +183,6 @@
             }
         }
     },
-
-    # TODO: Make an "Hazards" array of "Hazard" objects
 
     "Hazard": {
         "description": "Potential hazard of the recalled product",
@@ -217,8 +199,6 @@
         }
     },
 
-    # TODO: Make an "Remedies" array of "Remedy" objects
-
     "Remedy": {
         "description": "Recalled product UPC",
         "type": "object",
@@ -234,12 +214,10 @@
                     "type": "string"
                 },
                 "minItems": 1,
-                "uniqueItems": True,
+                "uniqueItems": true,
             }
         }
     },
-
-    # TODO: Make an "Retailers" array of "Retailer" objects
 
     "Retailer": {
         "description": "Retailer that sells or facilitates the sale of the recalled product",
@@ -256,8 +234,6 @@
         }
     },
 
-    # TODO: Make an "Importers" array of "Importer" objects
-
     "Importer": {
         "description": "Importer that imports the recalled product",
         "type": "object",
@@ -272,8 +248,6 @@
             }
         }
     },
-
-    # TODO: Make an "Distributors" array of "Distributor" objects
 
     "Distributor": {
         "description": "Distributor that distributes the recalled product",
@@ -297,8 +271,6 @@
         "exclusiveMaximum": 4,
     }
 },
-
-# TODO: Populate required
 
 "required": []
 
