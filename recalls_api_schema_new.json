@@ -1,0 +1,305 @@
+{"$schema": "http://json-schema.org/schema#",
+"title": "Recall",
+"description": "Recall from a government agency",
+"type": "object",
+"properties": {
+
+    "RecallID": {
+        "description": "Unique recall ID",
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "uniqueItems": True
+    },
+
+    "RecallAgency": {
+        "description": "Agency regulating the recall",
+        "type": "string"
+    },
+
+    "RecallNumber": {
+        "description": "Counter",
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "uniqueItems": True
+    },
+
+    "RecallDatetime": {
+        "description": "Date-time of recall",
+        "type": "string",
+        "format": "date-time"
+    },
+
+    "Description": {
+        "description": "Description of recall",
+        "type": "string"
+    },
+
+    "URL": {
+        "description": "URL of agency recall page",
+        "type": "string"
+    },
+
+    "Title": {
+        "description": "Headline summary of recall",
+        "type": "string"
+    },
+
+    "ConsumerContact": {
+        "description": "Contact information for consumers",
+        "type": "object",
+        "properties": {
+
+            "entity": {
+                "description": "Entity to contact",
+                "type": "string"
+            },
+
+            "type": {
+                "description": "Type of contact (e.g., phone, e-mail)",
+                "type": "string"
+            },
+
+            "value": {
+                "description": "E.g., recalls@recalls.gov",
+                "type": "string"
+            },
+
+            "title": {
+                "description": "Headline summary of contact instructions",
+                "type": "string"
+            },
+        }
+    },
+
+    "LastPublishDate": {
+        "description": "Date-time of last publishing",
+        "type": "string",
+        "format": "date-time"
+    },
+
+    # TODO: Make a "Products" array of "Product" objects
+    # How might we accommodate both lettuce and automobiles (with year, make, model, and VIN) here?
+
+    "Product": {
+        "description": "Recalled product",
+        "type": "object",
+        "properties": {
+
+            "Name": {
+                "description": "Name of recalled product",
+                "type": "string"
+                },
+
+            "Description": {
+                "description": "Description of recalled product",
+                "type": "string"
+                },
+
+            "Model": {
+                "description": "Model of recalled product",
+                "type": "string"
+            },
+
+            "Type": {
+                "description": "Type of recalled product",
+                "type": "string"
+            },
+
+            "CategoryID": {
+                "description": "Category ID of recalled product",
+                "type": "string"
+            },
+
+            "NumberOfUnits": {
+                "description": "Number of units of product being recalled",
+                "type": "number"
+            },
+        }
+    },
+
+    # TODO: Make an "Inconjunctions" array of "Inconjunction" objects
+
+    "Inconjunction": {
+        "description": "Inconjunction",
+        "type": "object",
+        "properties": {
+            "Country": {
+                "description": "Country of inconjunction",
+                "type": "string"
+            }
+        }
+    },
+
+    # TODO: Make an "Images" array of "Image" objects
+
+    "Image": {
+        "description": "image of recalled product",
+        "type": "object",
+        "properties": {
+            "URL": {
+                "description": "Image URL for recalled product",
+                "type": "string"
+            }
+        }
+    },
+
+    # TODO: Make an "Injuries" array of "Injury" objects
+    # What exactly is "Injury" for? I took a guess below, although my guess seems more like "Hazard" below. Example of injury response from CPSC: <Name>None reported.</Name>
+
+    "Injury": {
+        "description": "Types of injuries caused by product",
+        "type": "object",
+        "properties": {
+            "Name": {
+                "description": "Name of injury a person may suffer from recalled product",
+                "type": "string"
+            }
+        }
+    },
+
+    # TODO: Make an "Manufacturers" array of "Manufacturer" objects
+
+    "Manufacturer": {
+        "description": "Recalled product manufacturer",
+        "type": "object",
+        "properties": {
+            "Name": {
+                "description": "Name of recalled product manufacturer",
+                "type": "string"
+            },
+            "CompanyID": {
+                "description": "Company ID of recalled product manufacturer",
+                "type": "number"
+            }
+        }
+    },
+
+    # TODO: Make an "ManufacturerCountries" array of "ManufacturerCountry" objects
+
+    "ManufacturerCountry": {
+        "description": "Country in which recalled product is manufactured",
+        "type": "object",
+        "properties": {
+            "Country": {
+                "description": "Country",
+                "type": "string"
+            }
+        }
+    },
+
+    # TODO: Make an "ProductUPCs" array of "ProductUPC" objects
+
+    "ProductUPC": {
+        "description": "Recalled product UPC",
+        "type": "object",
+        "properties": {
+            "UPC": {
+                "description": "UPC",
+                "type": "number"
+            }
+        }
+    },
+
+    # TODO: Make an "Hazards" array of "Hazard" objects
+
+    "Hazard": {
+        "description": "Potential hazard of the recalled product",
+        "type": "object",
+        "properties": {
+            "Name": {
+                "description": "Description of the hazard of the recalled product",
+                "type": "string"
+            },
+            "HazardTypeID": {
+                "description": "Type ID for hazard",
+                "type": "number"
+            }
+        }
+    },
+
+    # TODO: Make an "Remedies" array of "Remedy" objects
+
+    "Remedy": {
+        "description": "Recalled product UPC",
+        "type": "object",
+        "properties": {
+            "Name": {
+                "description": "Description of the suggested remedy for the recalled product",
+                "type": "number"
+            },
+            "Options": {
+                "description": "Remedy types. E.g., 'Refund'",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 1,
+                "uniqueItems": True,
+            }
+        }
+    },
+
+    # TODO: Make an "Retailers" array of "Retailer" objects
+
+    "Retailer": {
+        "description": "Retailer that sells or facilitates the sale of the recalled product",
+        "type": "object",
+        "properties": {
+            "Name": {
+                "description": "Name of the retailer or marketplace",
+                "type": "string"
+            },
+            "CompanyID": {
+                "description": "CompanyID of the retailer or marketplace",
+                "type": "number"
+            }
+        }
+    },
+
+    # TODO: Make an "Importers" array of "Importer" objects
+
+    "Importer": {
+        "description": "Importer that imports the recalled product",
+        "type": "object",
+        "properties": {
+            "Name": {
+                "description": "Name of the importer",
+                "type": "string"
+            },
+            "CompanyID": {
+                "description": "CompanyID of the importer",
+                "type": "number"
+            }
+        }
+    },
+
+    # TODO: Make an "Distributors" array of "Distributor" objects
+
+    "Distributor": {
+        "description": "Distributor that distributes the recalled product",
+        "type": "object",
+        "properties": {
+            "Name": {
+                "description": "Name of the distributor",
+                "type": "string"
+            },
+            "CompanyID": {
+                "description": "CompanyID of the distributor",
+                "type": "number"
+            }
+        }
+    },
+
+    "SeverityCategory": {
+        "description": "Category of recall severity",
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "exclusiveMaximum": 4,
+    }
+},
+
+# TODO: Populate required
+
+"required": []
+
+}
