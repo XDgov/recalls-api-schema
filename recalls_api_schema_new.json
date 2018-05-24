@@ -8,7 +8,7 @@
         "description": "Unique recall ID",
         "type": "number",
         "exclusiveMinimum": 0,
-        "uniqueItems": True
+        "uniqueItems": true
     },
 
     "RecallAgency": {
@@ -20,7 +20,7 @@
         "description": "Counter",
         "type": "number",
         "exclusiveMinimum": 0,
-        "uniqueItems": True
+        "uniqueItems": true
     },
 
     "RecallDatetime": {
