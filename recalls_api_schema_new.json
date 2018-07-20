@@ -35,12 +35,12 @@
     },
 
     "URL": {
-        "description": "URL of agency recall page",
+        "description": "Agency recall page URL",
         "type": "string"
     },
 
     "Title": {
-        "description": "Headline summary of recall",
+        "description": "Recall headline summary",
         "type": "string"
     },
 
@@ -77,40 +77,43 @@
         "format": "date-time"
     },
 
-    "Product": {
-        "description": "Recalled product",
-        "type": "object",
-        "properties": {
+    "Products": {
+        "description": "Recalled products",
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
 
-            "Name": {
-                "description": "Name of recalled product",
-                "type": "string"
+                "Name": {
+                    "description": "Recalled product name",
+                    "type": "string"
+                    },
+
+                "Description": {
+                    "description": "Recalled product description",
+                    "type": "string"
+                    },
+
+                "Model": {
+                    "description": "Recalled product model",
+                    "type": "string"
                 },
 
-            "Description": {
-                "description": "Description of recalled product",
-                "type": "string"
+                "Type": {
+                    "description": "Recalled product type",
+                    "type": "string"
                 },
 
-            "Model": {
-                "description": "Model of recalled product",
-                "type": "string"
-            },
+                "CategoryID": {
+                    "description": "Recalled product category ID",
+                    "type": "string"
+                },
 
-            "Type": {
-                "description": "Type of recalled product",
-                "type": "string"
-            },
-
-            "CategoryID": {
-                "description": "Category ID of recalled product",
-                "type": "string"
-            },
-
-            "NumberOfUnits": {
-                "description": "Number of units of product being recalled",
-                "type": "number"
-            },
+                "NumberOfUnits": {
+                    "description": "Number of units of product being recalled",
+                    "type": "number"
+                },
+            }
         }
     },
 
