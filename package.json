@@ -1,0 +1,20 @@
+{
+  "name": "recalls-api-schema",
+  "private": true,
+  "dependencies": {
+    "ajv-cli": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "ajv compile -s recalls_api_schema_new.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XDgov/recalls-api-schema.git"
+  },
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/XDgov/recalls-api-schema/issues"
+  },
+  "homepage": "https://github.com/XDgov/recalls-api-schema#readme"
+}
