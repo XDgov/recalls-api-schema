@@ -67,7 +67,7 @@
             "title": {
                 "description": "Headline summary of contact instructions",
                 "type": "string"
-            },
+            }
         }
     },
 
@@ -110,7 +110,7 @@
             "NumberOfUnits": {
                 "description": "Number of units of product being recalled",
                 "type": "number"
-            },
+            }
         }
     },
 
@@ -214,7 +214,7 @@
                     "type": "string"
                 },
                 "minItems": 1,
-                "uniqueItems": true,
+                "uniqueItems": true
             }
         }
     },
@@ -268,7 +268,7 @@
         "description": "Category of recall severity",
         "type": "number",
         "exclusiveMinimum": 0,
-        "exclusiveMaximum": 4,
+        "exclusiveMaximum": 4
     }
 },
 
